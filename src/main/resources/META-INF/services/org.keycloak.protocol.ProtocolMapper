@@ -1,0 +1,2 @@
+# List of the protocol mappers loaded by Keycloak.
+com.inventage.keycloak.extension.SubGroupClaimMapper
