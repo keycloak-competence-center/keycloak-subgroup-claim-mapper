@@ -7,7 +7,7 @@
 
     <groupId>com.inventage.keycloak.extension</groupId>
     <artifactId>keycloak-sub-group-claim-mapper</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
 
     <build>
