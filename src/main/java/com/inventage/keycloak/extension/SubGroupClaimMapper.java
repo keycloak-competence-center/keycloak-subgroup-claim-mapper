@@ -29,7 +29,6 @@ public class SubGroupClaimMapper extends AbstractOIDCProtocolMapper implements O
         OIDCAttributeMapperHelper.addTokenClaimNameConfig(configProperties);
         OIDCAttributeMapperHelper.addIncludeInTokensConfig(configProperties, SubGroupClaimMapper.class);
 
-
         // Inclusion filter prefix
         ProviderConfigProperty property = new ProviderConfigProperty();
         property.setName(GROUP_PROPERTY_NAME);
@@ -81,7 +80,7 @@ public class SubGroupClaimMapper extends AbstractOIDCProtocolMapper implements O
             return;
         }
 
-        Optional<GroupModel> optionalGroupModel = keycloakSession.groups()
+        final Optional<GroupModel> optionalGroupModel = keycloakSession.groups()
             .getGroupsStream(userSession.getRealm()).filter(groupModel -> fullPathOf(groupModel).equals(configuredGroupName)).findFirst();
 
         if (optionalGroupModel.isEmpty()) {
@@ -89,10 +88,11 @@ public class SubGroupClaimMapper extends AbstractOIDCProtocolMapper implements O
             return;
         }
 
-        GroupModel parentGroupModel = optionalGroupModel.get();
-        Set<GroupModel> subGroups = parentGroupModel.getSubGroupsStream().collect(toSet());
-        List<GroupModel> userGroups = user.getGroupsStream().filter(subGroups::contains).collect(toList());
-        List<String> userGroupNames = userGroups.stream().map(GroupModel::getName).collect(toList());
+        final GroupModel parentGroupModel = optionalGroupModel.get();
+        final Set<GroupModel> subGroups = parentGroupModel.getSubGroupsStream().collect(toSet());
+        final List<GroupModel> userGroups = user.getGroupsStream().filter(subGroups::contains).toList();
+        final List<String> userGroupNames = userGroups.stream().map(GroupModel::getName).collect(toList());
+
         token.getOtherClaims().put(claimName, userGroupNames);
     }
 
