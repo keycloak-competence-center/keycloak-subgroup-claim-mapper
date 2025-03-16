@@ -21,7 +21,9 @@ public class SubGroupClaimMapper extends AbstractOIDCProtocolMapper implements O
 
     // ---- Statics
 
+    /** This is the name under which it is registered with Keycloak. */
     private static final String MAPPER_ID = "oidc-sub-group-claim-mapper";
+
     private static final String GROUP_PROPERTY_NAME = "config.group";
     private static final List<ProviderConfigProperty> configProperties = new ArrayList<>();
 
@@ -34,7 +36,7 @@ public class SubGroupClaimMapper extends AbstractOIDCProtocolMapper implements O
         property.setName(GROUP_PROPERTY_NAME);
         property.setLabel("Group");
         property.setType(ProviderConfigProperty.GROUP_TYPE);
-        property.setHelpText("The group which sub groups should be used as claim value.");
+        property.setHelpText("The group whose sub groups should be used as claim value.");
         configProperties.add(property);
     }
 
