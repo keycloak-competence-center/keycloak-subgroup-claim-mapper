@@ -55,7 +55,7 @@ public class SubGroupClaimMapper extends AbstractOIDCProtocolMapper implements O
 
     @Override
     public String getHelpText() {
-        return "Takes a parent group as argument and adds their child groups as claim values.";
+        return "Takes a parent group as argument and adds their child groups, where the user is member, as claim values.";
     }
 
     @Override
