@@ -1,4 +1,4 @@
-package com.inventage.keycloak.extension;
+package com.inventage.keycloak;
 
 import org.junit.jupiter.api.Test;
 import org.keycloak.models.*;
@@ -17,9 +17,9 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 /**
- * Unit test for {@link SubGroupClaimMapper}.
+ * Unit test for {@link SubgroupClaimMapper}.
  */
-public class SubGroupClaimMapperTest {
+public class SubgroupClaimMapperTest {
 
     // ---- Statics
 
@@ -28,7 +28,7 @@ public class SubGroupClaimMapperTest {
 
     // ---- Fields
 
-    private final SubGroupClaimMapper subGroupClaimMapper = new SubGroupClaimMapper();
+    private final SubgroupClaimMapper subGroupClaimMapper = new SubgroupClaimMapper();
 
 
     // ---- Methods

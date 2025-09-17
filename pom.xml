@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-    <name>Keycloak Sub Group Claim Mapper</name>
-    <description>Keycloak Extension: A protocol mapper which decodes parent groups as claims and their subgroups as claim values.</description>
+    <name>Keycloak Subgroup Claim Mapper</name>
+    <description>A Keycloak protocol mapper which decodes parent groups as claims and their subgroups as claim values.</description>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.inventage.keycloak.extension</groupId>
-    <artifactId>keycloak-sub-group-claim-mapper</artifactId>
+    <groupId>com.inventage.keycloak.subgroup-claim-mapper</groupId>
+    <artifactId>keycloak-subgroup-claim-mapper</artifactId>
     <version>0.0.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 

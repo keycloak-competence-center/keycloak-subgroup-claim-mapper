@@ -1,4 +1,4 @@
-package com.inventage.keycloak.extension;
+package com.inventage.keycloak;
 
 import org.keycloak.models.*;
 import org.keycloak.protocol.oidc.mappers.*;
@@ -17,19 +17,19 @@ import static org.keycloak.protocol.oidc.mappers.ClaimsParameterWithValueIdToken
 /*
  * Accepts a group as argument and writes all the subgroups where the user is member into the claim value.
  */
-public class SubGroupClaimMapper extends AbstractOIDCProtocolMapper implements OIDCAccessTokenMapper, OIDCIDTokenMapper, UserInfoTokenMapper {
+public class SubgroupClaimMapper extends AbstractOIDCProtocolMapper implements OIDCAccessTokenMapper, OIDCIDTokenMapper, UserInfoTokenMapper {
 
     // ---- Statics
 
     /** This is the name under which it is registered with Keycloak. */
-    private static final String MAPPER_ID = "oidc-sub-group-claim-mapper";
+    private static final String MAPPER_ID = "oidc-subgroup-claim-mapper";
 
     private static final String GROUP_PROPERTY_NAME = "config.group";
     private static final List<ProviderConfigProperty> configProperties = new ArrayList<>();
 
     static {
         OIDCAttributeMapperHelper.addTokenClaimNameConfig(configProperties);
-        OIDCAttributeMapperHelper.addIncludeInTokensConfig(configProperties, SubGroupClaimMapper.class);
+        OIDCAttributeMapperHelper.addIncludeInTokensConfig(configProperties, SubgroupClaimMapper.class);
 
         // Inclusion filter prefix
         ProviderConfigProperty property = new ProviderConfigProperty();
